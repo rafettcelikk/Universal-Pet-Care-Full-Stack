@@ -1,0 +1,26 @@
+package com.rafetcelik.universal_pet_care.repository;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.rafetcelik.universal_pet_care.enums.AppointmentStatus;
+import com.rafetcelik.universal_pet_care.model.Appointment;
+import com.rafetcelik.universal_pet_care.model.User;
+
+public interface AppointmentRepository extends JpaRepository<Appointment, Long>{
+
+	Appointment findByAppointmentNo(String appointmentNo);
+
+	boolean existsByVeterinarianIdAndPatientIdAndStatus(Long veterinarianId, Long reviewerId,
+			AppointmentStatus completed);
+	
+	@Query("SELECT a FROM Appointment a WHERE a.veterinarian.id = :userId OR a.patient.id = :userId")
+	List<Appointment> findAllByUserId(@Param("userId") Long userId);
+
+	List<Appointment> findByVeterinarianAndAppointmentDate(User veterinarian, LocalDate requestedDate);
+
+}

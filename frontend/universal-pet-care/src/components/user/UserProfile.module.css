@@ -1,0 +1,15 @@
+/*
+Start active and inactive styles for user profile
+*/
+.inactive {
+  color: orange;
+  font-weight: bold;
+}
+
+.active {
+  color: green;
+  font-weight: bold;
+}
+/* 
+End active and inactive styles for user profile
+*/
