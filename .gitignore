@@ -1,0 +1,33 @@
+# --- BACKEND (Java / Spring Boot) ---
+
+# Hassas Yapılandırma Dosyaları (EN ÖNEMLİ KISIM)
+# Token anahtarlarını ve DB şifrelerini burada saklıyorsan bunları gizle:
+backend/src/main/resources/application.properties
+backend/src/main/resources/application.yml
+backend/.env
+
+# Derleme Çıktıları
+backend/target/
+backend/*.jar
+backend/*.war
+
+# Maven ve Wrapper Dosyaları
+backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+
+# Loglar
+backend/*.log
+
+# --- FRONTEND (React) ---
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.env.local
+
+# --- GENEL / IDE ---
+.idea/
+.vscode/
+*.iml
+.DS_Store
