@@ -155,9 +155,9 @@ const UserProfile = ({ user, handleRemovePhoto, handleDeleteAccount }) => {
                 <Col md={4}>Cinsiyet:</Col>
                 <Col md={4}>
                   <Card.Text>
-                    {user?.gender === "female"
+                    {user?.gender === "Female"
                       ? "Kadın"
-                      : user?.gender === "male"
+                      : user?.gender === "Male"
                         ? "Erkek"
                         : "Diğer"}
                   </Card.Text>
